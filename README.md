@@ -9,7 +9,7 @@
 
 # Links
 
-- Live Site URL: [Click to view Live Site](https://coded-by-mj.github.io/Modern-Bank/)
+- Live Site URL: [Click to view Live Site](https://mj-realtors.netlify.app/)
 
 
 
