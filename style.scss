@@ -404,15 +404,44 @@ section{
                 margin: 0px;
                 cursor: move;
                 cursor: grab;
+                width: 207px;
+                height: 197px;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
 
                 &:active {
                     cursor: grabbing;
                 }
+                
+            }
+            
+        &:nth-child(1) > figure{
+                  background-image: url("assets/marberg.png");
 
-                img{
-                    object-fit: cover;
-                    object-position: 50% 100%;
-                }
+               }
+
+        &:nth-child(2) > figure{
+                    background-image: url("assets/brand-name-logo.png");
+               }
+
+        &:nth-child(3)> figure{
+                    background-image: url("assets/DMC-logo.png");
+
+               }
+
+        &:nth-child(4) > figure{
+                    background-image: url("assets/worldwide-logo.png");
+
+               } 
+               
+        &:nth-child(5) > figure{
+                    background-image: url("assets/meyora-logo.png");
+
+               }
+
+
+
             }
         }
 
@@ -737,18 +766,16 @@ section{
                 height: 512px;
                 cursor: move;
                 cursor: grab;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+            
 
                 &:active {
                     cursor: grabbing;
                 }
 
-                img{
-                    width: 100%;
-                    border-radius: 5px;
-                    height: 100%;
-                    object-fit: cover;
-                    object-position: 50% 100%;
-                }
+             
 
                 figcaption{
                     position: absolute;
@@ -814,6 +841,17 @@ section{
          }
       }
 
+
+ .card:nth-child(3n+1) > figure{
+    background-image: url("assets/pool-house.png");
+ }
+
+ .card:nth-child(3n+2) > figure{
+    background-image: url("assets/black-house.png");
+ }
+ .card:nth-child(3n+3) > figure{
+    background-image: url("assets/BW-house.png");
+ }
 
 
 
@@ -967,7 +1005,7 @@ section{
 
 }
 
-}
+
 
 
 

@@ -28,95 +28,95 @@ menubtn.addEventListener('click', function(){
 
 
 
+
+
 // Function to initialize the carousel
-function initCarousel(wrapperElement) {
-    let startX;
-    let scrollLeft;
 
-    function handleMouseDown(e) {
-        startX = e.pageX - wrapperElement.offsetLeft;
-        scrollLeft = wrapperElement.scrollLeft;
-        wrapperElement.style.scrollBehavior = 'unset';
-    }
+let isDown = false;
+let startX;
+let scrollLeft;
 
-    function handleMouseMove(e) {
-        if (!startX) return;
-        e.preventDefault();
-        const x = e.pageX - wrapperElement.offsetLeft;
-        const walk = (x - startX) * 2; 
-        wrapperElement.scrollLeft = scrollLeft - walk;
-    }
 
-    function handleMouseUp() {
-        startX = null;
-        wrapperElement.style.scrollBehavior = 'smooth';
-    }
 
-    function handleTouchStart(e) {
-        startX = e.touches[0].pageX - wrapperElement.offsetLeft;
-        scrollLeft = wrapperElement.scrollLeft;
-        wrapperElement.style.scrollBehavior = 'unset';
-    }
-
-    function handleTouchMove(e) {
-        if (!startX) return;
-        e.preventDefault();
-        const x = e.touches[0].pageX - wrapperElement.offsetLeft;
-        const walk = (x - startX) * 2;
-        wrapperElement.scrollLeft = scrollLeft - walk;
-    }
-
-    function handleTouchEnd() {
-        startX = null;
-        wrapperElement.style.scrollBehavior = 'smooth';
-    }
-
-    // Add event listeners for mouse and touch events to enable scrolling
-    wrapperElement.addEventListener('mousedown', handleMouseDown);
-    wrapperElement.addEventListener('mousemove', handleMouseMove);
-    wrapperElement.addEventListener('mouseup', handleMouseUp);
-    wrapperElement.addEventListener('mouseleave', handleMouseUp);
-    wrapperElement.addEventListener('touchstart', handleTouchStart);
-    wrapperElement.addEventListener('touchmove', handleTouchMove);
-    wrapperElement.addEventListener('touchend', handleTouchEnd);
-
-    // Return a function to remove event listeners
-    return function removeEventListeners() {
-        wrapperElement.removeEventListener('mousedown', handleMouseDown);
-        wrapperElement.removeEventListener('mousemove', handleMouseMove);
-        wrapperElement.removeEventListener('mouseup', handleMouseUp);
-        wrapperElement.removeEventListener('mouseleave', handleMouseUp);
-        wrapperElement.removeEventListener('touchstart', handleTouchStart);
-        wrapperElement.removeEventListener('touchmove', handleTouchMove);
-        wrapperElement.removeEventListener('touchend', handleTouchEnd);
-    };
+function isDownState(){
+    isDown = false;
 }
+
+function handleMouseDown(e) {
+    const target = e.currentTarget;
+    isDown = true;
+    startX = e.pageX - target.offsetLeft;
+    scrollLeft = target.scrollLeft;
+
+   
+}
+
+function handleTouchStart(e) {
+    const target = e.currentTarget;
+    isDown = true;
+    startX = e.touches[0].pageX - target.offsetLeft;
+    scrollLeft = target.scrollLeft;
+
+}
+
+
+function handleMouseMove(e) {
+    if (!isDown) return;
+    e.preventDefault();
+    const target = e.currentTarget;
+    const x = e.pageX - target.offsetLeft;
+    const walk = (x - startX) * 2;
+    target.scrollLeft = scrollLeft - walk;
+
+}
+
+function handleTouchMove(e) {
+    if (!isDown) return;
+    e.preventDefault();
+    const target = e.currentTarget;
+    const x = e.touches[0].pageX - target.offsetLeft;
+    const walk = (x - startX) * 2;
+    target.scrollLeft = scrollLeft - walk;
+   
+   
+}
+
+
+
 
 // Function to handle the "See all" button click event
 function handleSeeAllButtonClick() {
     const houseWrapper = document.querySelector('.house-wrapper');
-    setTimeout(() => {
-        houseWrapper.classList.toggle('open');
-        const isOpen = houseWrapper.classList.contains('open'); // Move the isOpen check here
-        const svg = document.querySelector('.see-svg');
-        const txt = document.querySelector('.see-txt');
+    const svg = this.querySelector('.see-svg');
+    const txt = this.querySelector('.see-txt');
+
+    houseWrapper.classList.toggle('open');
+    const isOpen = houseWrapper.classList.contains('open'); // Move the isOpen check here
+     
         if (isOpen) {
-            const removeListeners = initCarousel(houseWrapper); // Initialize carousel functionality when "See all" section is open
             svg.classList.add('see-rotate');
             txt.textContent = "See less";
-            // Save the function to remove event listeners directly on the houseWrapper element
-            houseWrapper.removeEventListeners = removeListeners;
+            houseWrapper.addEventListener("mousedown", handleMouseDown);
+            houseWrapper.addEventListener("mousemove", handleMouseMove);
+            houseWrapper.addEventListener("touchstart", handleTouchStart);
+            houseWrapper.addEventListener("touchmove", handleTouchMove);
+            houseWrapper.addEventListener("mouseup", isDownState);
+            houseWrapper.addEventListener("mouseleave", isDownState);
+            houseWrapper.addEventListener("touchend", isDownState);
+
         } else {
             svg.classList.remove('see-rotate');
             txt.textContent = "See all";
-            // Remove event listeners when section is closed
-            const removeListeners = houseWrapper.removeEventListeners;
-            if (removeListeners) {
-                removeListeners();
-                houseWrapper.removeEventListeners = null;
-            }
+            houseWrapper.removeEventListener("mousedown", handleMouseDown);
+            houseWrapper.removeEventListener("mousemove", handleMouseMove);
+            houseWrapper.removeEventListener("touchstart", handleTouchStart);
+            houseWrapper.removeEventListener("touchmove", handleTouchMove);
+            houseWrapper.removeEventListener("mouseup", isDownState);
+            houseWrapper.removeEventListener("mouseleave", isDownState);
+            houseWrapper.removeEventListener("touchend", isDownState);
+    
         }
-    }, 300);
+
 }
 
 // Add event listener for the "See all" button click event
@@ -126,7 +126,14 @@ seeAllBtn.addEventListener('click', handleSeeAllButtonClick);
 
 // Initialize carousel functionality for "carousel-wrap" element
 const carouselWrap = document.querySelector('.carousel-wrap');
-initCarousel(carouselWrap);
+carouselWrap.addEventListener("mousedown", handleMouseDown);
+carouselWrap.addEventListener("mousemove", handleMouseMove);
+carouselWrap.addEventListener("touchstart", handleTouchStart);
+carouselWrap.addEventListener("touchmove", handleTouchMove);
+carouselWrap.addEventListener("mouseup", isDownState);
+carouselWrap.addEventListener("mouseleave", isDownState);
+carouselWrap.addEventListener("touchend", isDownState);
+
 
 
 

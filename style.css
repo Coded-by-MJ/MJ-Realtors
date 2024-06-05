@@ -289,27 +289,42 @@ main .carousel-wrap .carousel-card figure {
   margin: 0px;
   cursor: move;
   cursor: grab;
+  width: 207px;
+  height: 197px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 main .carousel-wrap .carousel-card figure:active {
   cursor: grabbing;
 }
-main .carousel-wrap .carousel-card figure img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: 50% 100%;
-     object-position: 50% 100%;
+main .carousel-wrap .carousel-card:nth-child(1) > figure {
+  background-image: url("assets/marberg.png");
 }
-main .section-two {
+main .carousel-wrap .carousel-card:nth-child(2) > figure {
+  background-image: url("assets/brand-name-logo.png");
+}
+main .carousel-wrap .carousel-card:nth-child(3) > figure {
+  background-image: url("assets/DMC-logo.png");
+}
+main .carousel-wrap .carousel-card:nth-child(4) > figure {
+  background-image: url("assets/worldwide-logo.png");
+}
+main .carousel-wrap .carousel-card:nth-child(5) > figure {
+  background-image: url("assets/meyora-logo.png");
+}
+
+.section-two {
   margin-top: 6rem;
 }
-main .section-two figure {
+.section-two figure {
   width: 100%;
   height: 448px;
   margin: 0;
   border: none;
   padding: 0 0.375rem;
 }
-main .section-two figure img {
+.section-two figure img {
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: 50% 100%;
@@ -318,62 +333,63 @@ main .section-two figure img {
   height: 100%;
   border-radius: 1.32rem;
 }
-main .section-two article {
+.section-two article {
   padding: 0 0.75rem;
   padding-top: 2rem;
 }
-main .section-two article h3 {
+.section-two article h3 {
   font-size: clamp(2rem, 5vw, 3.5625rem);
   margin-bottom: 1rem;
 }
-main .section-two article p {
+.section-two article p {
   color: #6A6B6B;
   font-size: clamp(1rem, 3vw, 1.3125rem);
   line-height: 1.6875rem;
   margin-bottom: 1.5rem;
 }
-main .section-two article .number-wrap {
+.section-two article .number-wrap {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
 }
-main .section-two article .number-wrap .item {
+.section-two article .number-wrap .item {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   flex-flow: column nowrap;
 }
-main .section-two article .number-wrap .item span {
+.section-two article .number-wrap .item span {
   display: inline-block;
   color: #6A6B6B;
   font-size: clamp(0.95rem, 3vw, 1.3125rem);
 }
-main .section-two article .number-wrap .item span.num {
+.section-two article .number-wrap .item span.num {
   font-size: clamp(1.5rem, 3vw, 2.5rem);
   font-weight: 500;
   color: #000000;
 }
-main .section-three {
+
+.section-three {
   margin-top: 6rem;
   padding: 0 0.375rem;
 }
-main .section-three h3 {
+.section-three h3 {
   font-size: clamp(2.1rem, 5vw, 3.5625rem);
   margin-bottom: 1.5rem;
 }
-main .section-three .grid-wrapper {
+.section-three .grid-wrapper {
   display: grid;
   row-gap: 3.5rem;
   grid-template-columns: auto;
 }
-main .section-three .grid-wrapper .item {
+.section-three .grid-wrapper .item {
   display: flex;
   justify-content: stretch;
   gap: 1rem;
   align-items: center;
 }
-main .section-three .grid-wrapper .item .bg {
+.section-three .grid-wrapper .item .bg {
   width: 4.4375rem;
   height: 4.4375rem;
   background-position: center;
@@ -381,39 +397,40 @@ main .section-three .grid-wrapper .item .bg {
   background-size: cover;
   flex-shrink: 0;
 }
-main .section-three .grid-wrapper .item:nth-child(1) .bg {
+.section-three .grid-wrapper .item:nth-child(1) .bg {
   background-image: url("assets/expertise-icon.svg");
 }
-main .section-three .grid-wrapper .item:nth-child(2) .bg {
+.section-three .grid-wrapper .item:nth-child(2) .bg {
   background-image: url("assets/personalized-icon.svg");
 }
-main .section-three .grid-wrapper .item:nth-child(3) .bg {
+.section-three .grid-wrapper .item:nth-child(3) .bg {
   background-image: url("assets/extensive-icon.svg");
 }
-main .section-three .grid-wrapper .item:nth-child(4) .bg {
+.section-three .grid-wrapper .item:nth-child(4) .bg {
   background-image: url("assets/tech-icon.svg");
 }
-main .section-three .grid-wrapper .item span {
+.section-three .grid-wrapper .item span {
   display: inline-block;
 }
-main .section-three .grid-wrapper .item span.sm-head {
+.section-three .grid-wrapper .item span.sm-head {
   font-size: clamp(1.3rem, 3vw, 2.25rem);
   color: #000000;
 }
-main .section-three .grid-wrapper .item span.quote {
+.section-three .grid-wrapper .item span.quote {
   font-size: clamp(1rem, 3vw, 1.3125rem);
   color: #6A6B6B;
 }
-main .section-four {
+
+.section-four {
   margin-top: 6rem;
 }
-main .section-four figure {
+.section-four figure {
   margin: 0;
   width: 100%;
   height: 27.7rem;
   margin-bottom: 2rem;
 }
-main .section-four figure img {
+.section-four figure img {
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -422,14 +439,14 @@ main .section-four figure img {
   border-radius: 29px;
   height: 100%;
 }
-main .section-four article {
+.section-four article {
   display: flex;
   flex-direction: column;
   justify-content: stretch;
   align-items: flex-start;
   padding: 0 0.75rem;
 }
-main .section-four article span {
+.section-four article span {
   display: inline-block;
   font-size: 128px;
   color: #000000;
@@ -438,37 +455,38 @@ main .section-four article span {
   font-family: "Inter", san-serif;
   margin-bottom: 2rem;
 }
-main .section-four article p {
+.section-four article p {
   font-family: "Inter", san-serif;
   font-size: clamp(1.2rem, 3vw, 1.5rem);
   color: #000000;
   line-height: 1.9rem;
   margin-bottom: 1.2rem;
 }
-main .section-four article h3 {
+.section-four article h3 {
   font-size: clamp(1.5rem, 5vw, 2.17125rem);
   text-align: center;
   margin-bottom: 0.5rem;
 }
-main .section-four article .stars {
+.section-four article .stars {
   margin-bottom: 1.2rem;
   height: 32px;
 }
-main .section-four article .button-wrapper {
+.section-four article .button-wrapper {
   align-self: flex-end;
 }
-main .section-four article .button-wrapper button {
+.section-four article .button-wrapper button {
   background-color: transparent;
   border: none;
 }
-main .house-header {
+
+.house-header {
   margin-top: 6rem;
   padding: 0 0.375rem;
 }
-main .house-header h3 {
+.house-header h3 {
   font-size: clamp(2.1rem, 5vw, 3.5625rem);
 }
-main .house-header .see-all {
+.house-header .see-all {
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -484,11 +502,12 @@ main .house-header .see-all {
   transition: all 0.3s ease-in-out;
   position: relative;
 }
-main .house-header .see-all .see-rotate {
+.house-header .see-all .see-rotate {
   transition: all 300ms;
   transform: rotate(-180deg);
 }
-main .house-wrapper {
+
+.house-wrapper {
   display: flex;
   flex-flow: row nowrap;
   justify-content: start;
@@ -504,25 +523,25 @@ main .house-wrapper {
   scrollbar-width: thin;
   transition: all 0.2s;
 }
-main .house-wrapper.open {
+.house-wrapper.open {
   overflow-x: scroll;
   max-width: initial;
 }
-main .house-wrapper::-webkit-scrollbar {
+.house-wrapper::-webkit-scrollbar {
   width: 0.5rem;
 }
-main .house-wrapper::-webkit-scrollbar-track {
+.house-wrapper::-webkit-scrollbar-track {
   background: #6A6B6B;
   border-radius: 6px;
 }
-main .house-wrapper::-webkit-scrollbar-thumb {
+.house-wrapper::-webkit-scrollbar-thumb {
   border-radius: 5px;
   background-color: #3F4198;
 }
-main .house-wrapper::-webkit-scrollbar-thumb:hover {
+.house-wrapper::-webkit-scrollbar-thumb:hover {
   background-color: #3F4198;
 }
-main .house-wrapper .card {
+.house-wrapper .card {
   width: 398px;
   height: 518px;
   background-color: #FFFFFF;
@@ -533,26 +552,20 @@ main .house-wrapper .card {
   scroll-snap-align: start;
   transition: all 300ms ease-in-out;
 }
-main .house-wrapper .card figure {
+.house-wrapper .card figure {
   margin: 0;
   width: 393px;
   height: 512px;
   cursor: move;
   cursor: grab;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
-main .house-wrapper .card figure:active {
+.house-wrapper .card figure:active {
   cursor: grabbing;
 }
-main .house-wrapper .card figure img {
-  width: 100%;
-  border-radius: 5px;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: 50% 100%;
-     object-position: 50% 100%;
-}
-main .house-wrapper .card figure figcaption {
+.house-wrapper .card figure figcaption {
   position: absolute;
   padding: 0.5rem 1rem;
   width: 100%;
@@ -561,27 +574,27 @@ main .house-wrapper .card figure figcaption {
   left: 0;
   background-color: rgba(255, 255, 255, 0.9);
 }
-main .house-wrapper .card figure figcaption p {
+.house-wrapper .card figure figcaption p {
   font-size: 1rem;
   color: #000000;
   font-weight: 600;
   font-family: "Inter", san-serif;
   line-height: 1.1875rem;
 }
-main .house-wrapper .card figure figcaption .book {
+.house-wrapper .card figure figcaption .book {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 1.2rem;
 }
-main .house-wrapper .card figure figcaption .book .price {
+.house-wrapper .card figure figcaption .book .price {
   align-self: flex-end;
   display: inline-block;
   font-size: 1.25rem;
   font-weight: 500;
   font-family: "Inter", san-serif;
 }
-main .house-wrapper .card figure figcaption .book button {
+.house-wrapper .card figure figcaption .book button {
   width: 120px;
   height: 45px;
   color: #FFFFFF;
@@ -595,12 +608,25 @@ main .house-wrapper .card figure figcaption .book button {
   background-color: #323488;
   cursor: pointer;
 }
-main .house-wrapper .card figure figcaption .book button:hover {
+.house-wrapper .card figure figcaption .book button:hover {
   background-color: #FFFFFF;
   color: #323488;
   border: 1px solid #323488;
 }
-main .faq-container {
+
+.card:nth-child(3n+1) > figure {
+  background-image: url("assets/pool-house.png");
+}
+
+.card:nth-child(3n+2) > figure {
+  background-image: url("assets/black-house.png");
+}
+
+.card:nth-child(3n+3) > figure {
+  background-image: url("assets/BW-house.png");
+}
+
+.faq-container {
   width: 100%;
   max-width: 63rem;
   margin: 0 auto;
@@ -611,7 +637,7 @@ main .faq-container {
   flex-direction: column;
   border: none;
 }
-main .faq-container .header {
+.faq-container .header {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -619,7 +645,7 @@ main .faq-container .header {
   align-items: center;
   gap: 0.5rem;
 }
-main .faq-container .header h3, main .faq-container .header .sm-quote {
+.faq-container .header h3, .faq-container .header .sm-quote {
   display: block;
   margin: 0;
   text-align: center;
@@ -628,13 +654,13 @@ main .faq-container .header h3, main .faq-container .header .sm-quote {
   font-weight: 600;
   font-size: clamp(2.25rem, 3vw, 3.5625rem);
 }
-main .faq-container .header .sm-quote {
+.faq-container .header .sm-quote {
   font-size: clamp(1rem, 3vw, 1.3125rem);
   font-weight: 400;
   max-width: 514px;
   margin-bottom: 1rem;
 }
-main .faq-container details {
+.faq-container details {
   position: relative;
   margin: 0 auto;
   width: 100%;
@@ -643,14 +669,14 @@ main .faq-container details {
   border: 1px solid #3D3D3D;
   max-width: 63rem;
 }
-main .faq-container details[open], main .faq-container details:hover {
+.faq-container details[open], .faq-container details:hover {
   background-color: rgba(63, 65, 152, 0.3);
   box-shadow: 0 2px 0 0 rgba(106, 107, 107, 0.2);
 }
-main .faq-container details[open] .faq-title {
+.faq-container details[open] .faq-title {
   color: #3F4198;
 }
-main .faq-container details[open] summary .expand-icon {
+.faq-container details[open] summary .expand-icon {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 21 6'%3E%3Cpath d='M20.4493 0.195454V5.05072H0.675106V0.195454H20.4493Z' fill='%23323488'/%3E%3C/svg%3E");
   animation: flip 200ms forwards;
 }
@@ -672,7 +698,7 @@ main .faq-container details[open] summary .expand-icon {
     top: 50%;
   }
 }
-main .faq-container details summary {
+.faq-container details summary {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -682,16 +708,16 @@ main .faq-container details summary {
   padding: 1.3rem;
   align-items: center;
 }
-main .faq-container details summary::-webkit-details-marker {
+.faq-container details summary::-webkit-details-marker {
   display: none;
 }
-main .faq-container details summary:focus {
+.faq-container details summary:focus {
   outline: none;
 }
-main .faq-container details summary:hover .faq-title {
+.faq-container details summary:hover .faq-title {
   color: #3F4198;
 }
-main .faq-container details summary .faq-title {
+.faq-container details summary .faq-title {
   font-weight: 600;
   font-family: "Inter", san-serif;
   color: #000000;
@@ -699,7 +725,7 @@ main .faq-container details summary .faq-title {
   transition: all 250ms ease-in-out;
   font-size: clamp(1.3rem, 3vw, 1.78rem);
 }
-main .faq-container details .faq-content {
+.faq-container details .faq-content {
   color: #4C4C4C;
   font-family: "Inter", san-serif;
   font-size: clamp(1rem, 3vw, 1.456875rem);
@@ -707,7 +733,7 @@ main .faq-container details .faq-content {
   font-weight: 400;
   line-height: 1.5;
 }
-main .faq-container details .expand-icon {
+.faq-container details .expand-icon {
   position: absolute;
   display: block;
   right: 1rem;
